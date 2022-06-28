@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
 func main() {
 	var number int
@@ -70,4 +74,7 @@ func main() {
 	case 5:
 		fmt.Println("Everyone gets $", amountStolen/5)
 	}
+
+	rand.Seed(time.Now().UnixNano()) //if we don't seed the random number generator, it will always generate the same number
+	fmt.Println(rand.Intn(100))
 }
